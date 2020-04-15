@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="start">Start Quiz!</div>
+        <div id="quiz" style="display: none">
+            <div id="question"></div>
+            <div id="qImg"></div>
+            <div id="choices">
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+		<div class="choice" id="D" onclick="checkAnswer('D')"></div>
+		<div class="choice" id="E" onclick="checkAnswer('E')"></div>
+            </div>
+            <div id="timer">
+                <div id="counter" style="display: none"></div>
+                <div id="btimeGauge style="display: none""></div>
+                <div id="timeGauge" style="display: none"></div>
+            </div>
+            <div id="progress" style="display: none"></div>
+        </div>
+        <div id="scoreContainer" style="display: none"></div>
+    </div>
+    <script src="quizeq.js"></script>
+</body>
+</html>
