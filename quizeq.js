@@ -1,4 +1,3 @@
-// select all elements
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
@@ -13,7 +12,6 @@ const timeGauge = document.getElementById("timeGauge");
 const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
 
-// create our questions
 let questions = [
     {
         question : "I can recognize my emotions as I experience them.",
@@ -138,7 +136,6 @@ let questions = [
     }
 ];
 
-// create some variables
 
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
@@ -149,7 +146,6 @@ const gaugeUnit = gaugeWidth / questionTime;
 let TIMER;
 let score = 0;
 
-// render a question
 function renderQuestion(){
     let q = questions[runningQuestion];
     
@@ -164,7 +160,6 @@ function renderQuestion(){
 
 start.addEventListener("click",startQuiz);
 
-// start quiz
 function startQuiz(){
     start.style.display = "none";
     renderQuestion();
@@ -174,14 +169,12 @@ function startQuiz(){
     TIMER = setInterval(renderCounter,1000); // 1000ms = 1s
 }
 
-// render progress
 function renderProgress(){
     for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
         progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
     }
 }
 
-// counter render
 
 function renderCounter(){
     if(count <= questionTime){
@@ -190,27 +183,22 @@ function renderCounter(){
         count++
     }else{
         count = 0;
-        // change progress color to red
         answerIsWrong();
         if(runningQuestion < lastQuestion){
             runningQuestion++;
             renderQuestion();
         }else{
-            // end the quiz and show the score
             clearInterval(TIMER);
             scoreRender();
         }
     }
 }
 
-// checkAnwer
 
 function checkAnswer(answer){
     if( answer == "A"){
-        // answer is correct
         score=score+1;
         answerIsCorrect();
-        // change progress color to green
     }else if(answer == "B"){
         score=score+2;
         answerIsCorrect();
@@ -224,8 +212,6 @@ function checkAnswer(answer){
         score=score+5;
         answerIsCorrect();
     }else{
-        // answer is wrong
-        // change progress color to red
         answerIsWrong();
     }
     count = 0;
@@ -233,29 +219,22 @@ function checkAnswer(answer){
         runningQuestion++;
         renderQuestion();
     }else{
-        // end the quiz and show the score
         clearInterval(TIMER);
         scoreRender();
     }
 }
 
-// answer is correct
 function answerIsCorrect(){
     document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
 }
 
-// answer is Wrong
 function answerIsWrong(){
     document.getElementById(runningQuestion).style.backgroundColor = "#f00";
 }
 
-// score render
 function scoreRender(){
     scoreDiv.style.display = "block";
-    
-    // calculate the amount of question percent answered by the user
-
-    // choose the image based on the scorePerCent
+  
     let img = (score >= 56) ? "You need to work on your emotional intelligence, you may find that you feel overwhelmed by your emotions especially in stressfull situations." :
               (score >= 35) ? "Your emotional intelligence level is... OK.You probably have good relationships with some people while not so good with others." :
               (score >= 15) ? "Great! You're an emotionally intelligent person. You have great relationships, and you probably find that people approach you for advice." :
