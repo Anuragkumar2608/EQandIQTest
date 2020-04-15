@@ -235,9 +235,9 @@ function answerIsWrong(){
 function scoreRender(){
     scoreDiv.style.display = "block";
   
-    let img = (score >= 56) ? "You need to work on your emotional intelligence, you may find that you feel overwhelmed by your emotions especially in stressfull situations." :
+    let img = (score >= 56) ? "Great! You're an emotionally intelligent person. You have great relationships, and you probably find that people approach you for advice." :
               (score >= 35) ? "Your emotional intelligence level is... OK.You probably have good relationships with some people while not so good with others." :
-              (score >= 15) ? "Great! You're an emotionally intelligent person. You have great relationships, and you probably find that people approach you for advice." :
+              (score >= 15) ? "You need to work on your emotional intelligence, you may find that you feel overwhelmed by your emotions especially in stressfull situations." :
               "Not in range";
     
     scoreDiv.innerHTML += "<p>"+ img +"</p>";
