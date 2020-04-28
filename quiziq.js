@@ -246,7 +246,7 @@ function scoreRender(){
 
     const scorePerCent = Math.round(100 * score/total);
     
-    let img = (scorePerCent >= 80) ? "Your IQ is greater than 140." :
+   /* let img = (scorePerCent >= 80) ? "Your IQ is greater than 140." :
 		(scorePerCent >= 70) ? "Your IQ lies between 130 and 140." :
               (scorePerCent >= 60) ? "Your IQ lies between 120 and 130." :
 		(scorePerCent >= 50) ? "Your IQ lies between 110 and 120." :
@@ -254,9 +254,10 @@ function scoreRender(){
               (scorePerCent >= 40) ? "Your IQ lies between 90 and 100." :
 		(scorePerCent >= 30) ? "Your IQ lies between 80 and 90." :
 		(scorePerCent >= 20) ? "Your IQ lies between 70 and 80." :
-              "Your IQ is less than 70.";
+              "Your IQ is less than 70.";  */
     
-    scoreDiv.innerHTML += "<p>"+ img +"</p>";
+    //scoreDiv.innerHTML += "<p>"+ img +"</p>";
+	scoreDiv.innerHTML += "<p>"+ scorePercent +"</p>";
 }
 
 
