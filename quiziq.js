@@ -257,7 +257,7 @@ function scoreRender(){
               "Your IQ is less than 70.";  */
     
     //scoreDiv.innerHTML += "<p>"+ img +"</p>";
-	scoreDiv.innerHTML += "<p>"+ scorePerCent +"</p>";
+	scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
 }
 
 
